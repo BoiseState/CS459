@@ -1,0 +1,12 @@
+[project]
+name = "cs459-setup"
+version = "0.1.0"
+description = "CS 459 environment setup check"
+requires-python = ">=3.10,<3.14"
+
+# These are the packages for YOUR LOCAL environment -- the one that runs
+# Jupyter. The container does not use them; it has no dependencies at all.
+dependencies = [
+    "jupyterlab>=4.3",
+    "requests>=2.32",
+]

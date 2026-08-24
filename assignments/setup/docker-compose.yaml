@@ -1,0 +1,9 @@
+services:
+  hello:
+    build: .
+    container_name: cs459-hello
+    ports:
+      # HOST:CONTAINER. Your laptop's port 8000 forwards to port 8000 inside
+      # the container. If something already owns 8000 on your machine, change
+      # the LEFT number only -- e.g. "8080:8000" -- and use 8080 in the notebook.
+      - "8000:8000"
