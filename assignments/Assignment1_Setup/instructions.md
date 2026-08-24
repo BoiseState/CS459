@@ -161,13 +161,13 @@ uv run jupyter lab
 ```
 
 Open `setup_check.ipynb`, fill in your name at the top, and run every cell in
-order. There's one short written question near the end.
+order. 
 
 ---
 
 ## Step 7 — Submit
 
-With every cell run and the question answered:
+With every cell run:
 
 **File → Save**, then **File → Export Notebook As → HTML**. Upload the `.html`
 to Canvas.
