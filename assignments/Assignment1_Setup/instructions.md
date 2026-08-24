@@ -62,7 +62,7 @@ uv --version
 
 ```bash
 git clone https://github.com/BoiseState/CS459
-cd setup
+cd Assignment1_Setup
 uv sync
 ```
 
@@ -161,13 +161,13 @@ uv run jupyter lab
 ```
 
 Open `setup_check.ipynb`, fill in your name at the top, and run every cell in
-order. There's one short written question near the end.
+order. 
 
 ---
 
 ## Step 7 — Submit
 
-With every cell run and the question answered:
+With every cell run:
 
 **File → Save**, then **File → Export Notebook As → HTML**. Upload the `.html`
 to Canvas.
