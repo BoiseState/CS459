@@ -62,7 +62,7 @@ uv --version
 
 ```bash
 git clone https://github.com/BoiseState/CS459
-cd setup
+cd Assignment1_Setup
 uv sync
 ```
 
