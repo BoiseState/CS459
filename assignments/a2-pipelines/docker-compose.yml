@@ -1,0 +1,16 @@
+services:
+  app:
+    build: .
+    image: cs459-a2-pipelines
+    working_dir: /app
+    volumes:
+      # Your repo folder, so edits on your machine show up immediately.
+      - .:/app
+      # The data lives in a Docker volume, not in your repo folder. Every file
+      # operation the pipeline does then behaves identically on Mac, Windows and Linux.
+      - a2-data:/app/data
+    stdin_open: true
+    tty: true
+
+volumes:
+  a2-data:

@@ -1,0 +1,11 @@
+[project]
+name = "cs459-a2-pipelines"
+version = "1.0.0"
+description = "CS 459 Assignment 2: diagnosing and repairing a nightly feature pipeline that works and is wrong anyway."
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "duckdb>=1.5.5,<1.6",
+]
+
+[tool.uv]
+package = false
