@@ -1,0 +1,5 @@
+data/
+.venv/
+.git/
+__pycache__/
+submission.zip

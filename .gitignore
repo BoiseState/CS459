@@ -5,3 +5,7 @@ __pycache__/
 .ipynb_checkpoints/
 .DS_Store
 .
+
+# a2-pipelines pins its dependencies; that lockfile has to be committed or the
+# container build fails on `uv sync --frozen`.
+!assignments/a2-pipelines/uv.lock
