@@ -142,7 +142,7 @@ def run_date(dt: date, data_dir: Path, *, resume: bool = False, force: bool = Fa
     import src.gates           # noqa: F401  (registers the gates)
 
     started = time.time()
-    run_id = os.environ.get("PIPELINE_RUN_ID") or f"{utcnow().strftime('%Y-%m-%dT%H:%M:%SZ')}-{secrets.token_hex(2)}"
+    run_id = os.environ.get("PIPELINE_RUN_ID") or f"{utcnow().strftime('%Y-%m-%dT%H-%M-%SZ')}-{secrets.token_hex(2)}"
     manifest = {
         "run_id": run_id,
         "dt": str(dt),

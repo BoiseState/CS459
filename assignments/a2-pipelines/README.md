@@ -101,7 +101,7 @@ python -m src.runner --backfill 2026-03-01 2026-03-21
 git pull
 ```
 
-If anything in the repo is fixed after release, the fix lands on `main` and is listed
+If anything in the repo is fixed after release, the fix lands on `master` and is listed
 in `CHANGELOG.md`. Pulling first means you never spend an hour on a problem that has
 already been fixed. If `git pull` refuses because you have local changes, copy your
 edited files somewhere safe, pull, and put them back. Email me if that looks scary.

@@ -59,6 +59,15 @@ def main() -> int:
         print("        That is expected inside the container: the repo's .git sits above the mounted folder.")
 
     check("make is available", shutil.which("make") is not None)
+
+    # A Windows checkout that hit an illegal filename silently drops files. Catch it here
+    # rather than letting it surface as a confusing Part 4 failure.
+    fixture = REPO / "tests" / "fixtures" / "part4" / "runs"
+    n_manifests = len(list(fixture.glob("*.json"))) if fixture.exists() else 0
+    check("the Part 4 fixture is complete", n_manifests == 45,
+          f"{n_manifests} of 45 run manifests" if n_manifests == 45 else
+          f"found only {n_manifests} of 45 run manifests in tests/fixtures/part4/runs/. Your checkout is "
+          "incomplete: git pull, and if that does not fix it, delete the repo and clone it again.")
     has_events = (DATA / "events" / "orders").exists()
     print(f"  {'ok  ' if has_events else 'note'}  events {'are generated' if has_events else 'not generated yet: run `make data` next'}")
 
