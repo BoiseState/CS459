@@ -1,0 +1,41 @@
+name: a3-deployment
+
+services:
+  # The team's MLflow: tracking server and model registry. UI at http://localhost:5050
+  mlflow:
+    build: .
+    image: a3-deployment:latest
+    command: >
+      mlflow server --host 0.0.0.0 --port 5000
+      --backend-store-uri sqlite:////work/mlflow_data/mlflow.db
+      --artifacts-destination /work/mlflow_data/artifacts
+      --allowed-hosts "*"
+    volumes:
+      - .:/work
+      # MLflow's database and artifacts live in a Docker volume, not in your repo folder,
+      # so the server behaves the same on Mac, Windows and Linux.
+      - mlflow-data:/work/mlflow_data
+    ports:
+      - "127.0.0.1:5050:5000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5000/health')"]
+      interval: 3s
+      retries: 40
+
+  # Where you work: `docker compose run --rm app`
+  app:
+    image: a3-deployment:latest
+    volumes:
+      - .:/work
+      - mlflow-data:/work/mlflow_data
+    environment:
+      MLFLOW_TRACKING_URI: http://mlflow:5000
+    depends_on:
+      mlflow:
+        condition: service_healthy
+    stdin_open: true
+    tty: true
+    command: bash
+
+volumes:
+  mlflow-data:

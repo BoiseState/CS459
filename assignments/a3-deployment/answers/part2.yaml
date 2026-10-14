@@ -1,0 +1,22 @@
+# Part 2. For each run in the team's history, can its logged "auc" be fairly
+# compared with the champion's? Use exactly one reason from this list:
+#   ok                     fair comparison
+#   uses_outcome           trained on a column that is the outcome itself
+#   post_booking_features  trained on columns not known when the booking is made
+#   random_split           trained and scored on a random split instead of by arrival date
+#   different_eval_period  scored on a different period than the holdout
+hgb-0130:
+  comparable: 
+  reason: 
+hgb-0206:
+  comparable: 
+  reason: 
+hgb-0213:
+  comparable: 
+  reason: 
+hgb-0220:
+  comparable: 
+  reason: 
+hgb-0227:
+  comparable: 
+  reason: 
