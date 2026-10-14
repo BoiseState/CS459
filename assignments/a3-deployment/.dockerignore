@@ -1,0 +1,8 @@
+.git
+mlflow_data
+submission
+submission.zip
+data
+**/__pycache__
+**/*.pyc
+backups

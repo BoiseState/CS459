@@ -1,0 +1,3 @@
+# Written by the deploy runbook on every release.
+model_uri: models:/cancellations/1
+threshold: 0.65

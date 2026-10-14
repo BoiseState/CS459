@@ -1,0 +1,4 @@
+# Keep LF line endings on every OS, including Windows checkouts.
+* text=auto eol=lf
+# The data file is fingerprinted byte for byte. Never convert it.
+data/hotels.csv -text

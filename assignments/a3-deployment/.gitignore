@@ -1,0 +1,8 @@
+mlflow_data/*
+!mlflow_data/.gitkeep
+submission/
+submission.zip
+__pycache__/
+*.pyc
+.pytest_cache/
+backups/
